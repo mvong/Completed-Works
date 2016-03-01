@@ -1,6 +1,5 @@
 Mark Vong																			      
-Email: mvong@usc.edu          													          
-STUDENT ID: 8626056021                                                                    
+Email: mvong@usc.edu                                                                      
 
 In order to compile: $ make				   												  
 In order to execute program: $ ./bin/facile                                               
