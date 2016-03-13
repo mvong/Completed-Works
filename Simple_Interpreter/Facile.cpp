@@ -173,11 +173,13 @@ void interpretProgram(istream& inf, ostream& outf)
 	vector<Statement *> program;
 	parseProgram( inf, program );
 	ProgramState* state = new ProgramState(program.size());
-	for(unsigned int i = 1; i < program.size(); i++) 
+	unsigned int pSize = program.size();
+	for(unsigned int i = 1; i < pSize; i++) 
 	{  
 		unsigned int temp = state->getC();
 		if(temp != i && temp < program.size() && temp > 0) {
 			program[temp]->execute(state, outf);
+			pSize++;
 		}
 		else if(temp == i && temp < program.size()) {
 			program[i]->execute(state, outf);
