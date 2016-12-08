@@ -29,9 +29,9 @@
 }
 
 - (void) setUpInterface {
-    self.authorLabel.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].user;
-    self.locationLabel.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].address;
-    self.serviceTextView.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].postDescription;
+    self.authorLabel.text = [NSString stringWithFormat:@"Author: %@", [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].user];
+    self.locationLabel.text = [NSString stringWithFormat:@"Location: %@", [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].address];
+    self.serviceTextView.text = [NSString stringWithFormat:@"Description\n%@", [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].postDescription];
 }
 
 - (void)didReceiveMemoryWarning {

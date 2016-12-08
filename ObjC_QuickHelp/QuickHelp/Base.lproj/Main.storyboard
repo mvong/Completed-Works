@@ -164,9 +164,6 @@
                                                     <segment title="Offer"/>
                                                 </segments>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <connections>
-                                                    <action selector="pickSegmentedControl:" destination="3Wb-5J-zQk" eventType="valueChanged" id="y5H-a3-oya"/>
-                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you requesting or offering a service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4XK-Uv-ndI">
                                                 <rect key="frame" x="20" y="8" width="560" height="26"/>
@@ -360,7 +357,6 @@
                                     </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-lg-RPP">
                                         <rect key="frame" x="20" y="301" width="560" height="37"/>
-                                        <color key="backgroundColor" red="0.019505033559999999" green="0.67488989089999996" blue="0.90058724830000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="PPQ-9V-5gK"/>
                                         </constraints>
@@ -370,7 +366,6 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-fK-Z0h">
                                         <rect key="frame" x="20" y="346" width="560" height="40"/>
-                                        <color key="backgroundColor" red="0.019505033559999999" green="0.67488989089999996" blue="0.90058724830000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="O8A-hX-3sB"/>
                                         </constraints>

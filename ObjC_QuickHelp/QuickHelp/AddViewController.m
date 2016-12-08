@@ -11,10 +11,10 @@
 
 @interface AddViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic) NSUInteger selectedSegment;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) FIRDatabaseReference *fdbRef;
+@property (strong, nonatomic) PostsModel* addPostsModel;
 @end
 
 @implementation AddViewController
@@ -29,35 +29,34 @@ UITextField* activeField;
 UInt8 refHandle;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.addPostsModel = [PostsModel sharedPostsModel]; //Get singleton
     [self registerForKeyboardNotifications];
-    self.fdbRef =[[FIRDatabase database] reference];
-    self.addDescriptionTextView.delegate = self;
-    self.addressTextField.delegate = self;
-    self.cityTextField.delegate = self;
-    self.zipcodeTextField.delegate = self;
-    self.saveButton.enabled = false;
-    self.fdbRef = [self.fdbRef child:@"Service"];
+    
+    self.fdbRef =[[FIRDatabase database] reference]; // Get reference to firebase database
+    self.addDescriptionTextView.delegate = self; // Set fields' delegates to self
+    self.addressTextField.delegate = self;       //
+    self.cityTextField.delegate = self;          //
+    self.zipcodeTextField.delegate = self;       //
+    self.saveButton.enabled = false; // Set save button initially to false
+    self.fdbRef = [self.fdbRef child:@"Service"]; // Set database node to 'Service'
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
+- (void)registerForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self // Tells when keyboard is to show up
                                              selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    [[NSNotificationCenter defaultCenter] addObserver:self // Tells when keyboard is to hide
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
     
 }
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
+// From stackoverflow - used to scoot view up so keyboard doesn't block textfields
+- (void)keyboardWasShown:(NSNotification*)aNotification {
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
@@ -65,8 +64,6 @@ UInt8 refHandle;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
     if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
@@ -74,34 +71,28 @@ UInt8 refHandle;
     }
 }
 
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
+// From stackoverflow - keyboard will hide
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
 }
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
+// From stackoverflow - keyboard is active
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     activeField = textField;
 }
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
+// From stackoverflow -  keyboard is done
+- (void)textFieldDidEndEditing:(UITextField *)textField {
     activeField = nil;
 }
-
-- (IBAction)pickSegmentedControl:(id)sender {
-    self.selectedSegment = [addSegmentControl selectedSegmentIndex];
-}
-
+// Enable save button IF all fields are filled
 - (void) enableSaveButtonForService:(NSString*) service
                             address:(NSString*) address
                                city:(NSString*) city
                             zipcode:(NSString*) zipcode {
     self.saveButton.enabled = (service.length > 0 && address.length > 0 && city.length > 0 && zipcode.length > 0);
 }
-
+// TextFieldDelgate method
 - (BOOL) textField: (UITextField* ) textField shouldChangeCharactersInRange: (NSRange) range
  replacementString: (NSString* ) string {
     
@@ -109,7 +100,7 @@ UInt8 refHandle;
     
     return YES;
 }
-
+// TextViewDelegate method
 -(BOOL) textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     NSString* changedString = [textView.text stringByReplacingCharactersInRange:range withString:text];
@@ -122,12 +113,13 @@ UInt8 refHandle;
     return YES;
 }
 
+// Hide keyboard
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     textField.text = nil;
     return YES;
 }
-
+// Hide keyboard based on user touch
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch* touch = [touches anyObject];
     if(touch.phase == UITouchPhaseBegan) {
@@ -137,7 +129,7 @@ UInt8 refHandle;
         [self.zipcodeTextField resignFirstResponder];
     }
 }
-
+// Selector for if textfields aren't empty, enable save button
 -(void)textFieldChanged:(UITextField*)textField {
     if(self.addDescriptionTextView.text.length > 0
        && self.addressTextField.text.length > 0
@@ -148,16 +140,14 @@ UInt8 refHandle;
         self.saveButton.enabled = NO;
     }
 }
-
+// Add selector to textfields to check if they're empty or not
 -(void) addSelectors {
     [self.addressTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.cityTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.zipcodeTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
-    
-    
-    
 }
 
+// Back button clicked
 - (IBAction)addBackButtonClicked:(id)sender {
     if(self.AddService) {
         self.AddService(0,
@@ -173,6 +163,7 @@ UInt8 refHandle;
     self.zipcodeTextField.text = nil;
     [self performSegueWithIdentifier:@"return_feed" sender:self];
 }
+// Save button clicked, write to database, add to PostsModel
 - (IBAction)saveButtonClicked:(id)sender {
     NSDictionary* dictionary;
     if(self.AddService) {
@@ -194,6 +185,9 @@ UInt8 refHandle;
     NSString* currUser = [[FIRAuth auth]currentUser].email;
     NSLog(@"%@ added something!", currUser);
     
+    Post* newPost = [[Post alloc] initWithPostDescription:self.addDescriptionTextView.text address:self.addressTextField.text city:self.cityTextField.text zipcode:self.zipcodeTextField.text user: [[FIRAuth auth]currentUser].email];
+    [self.addPostsModel addPost:newPost];
+    
     self.addSegmentControl.selectedSegmentIndex = 0;
     self.addDescriptionTextView.text = nil;
     self.addressTextField.text = nil;
@@ -201,18 +195,5 @@ UInt8 refHandle;
     self.zipcodeTextField.text = nil;
     [self performSegueWithIdentifier:@"return_feed" sender:self];
 }
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
