@@ -143,7 +143,7 @@
         <!--AddViewController-->
         <scene sceneID="Ao6-8o-IFD">
             <objects>
-                <viewController title="AddViewController" id="3Wb-5J-zQk" customClass="AddViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" title="AddViewController" automaticallyAdjustsScrollViewInsets="NO" id="3Wb-5J-zQk" customClass="AddViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rHB-AB-fQE"/>
                         <viewControllerLayoutGuide type="bottom" id="1Ch-Mc-5vg"/>
