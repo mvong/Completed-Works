@@ -55,13 +55,7 @@
 
 // Log out if user clicks logout button
 - (IBAction)logoutClicked:(id)sender {
-    NSError *signOutError;
-    BOOL status = [[FIRAuth auth] signOut:&signOutError];
-    if (!status) {
-        [self showAlertWithError:signOutError];
-    } else {
-        [self performSegueWithIdentifier:@"logout_success" sender:self];
-    }
+    [self showMenuOptions];
 }
 // From lecture slides
 -(void) showAlertWithError:(NSError*) error {
@@ -85,6 +79,50 @@
                                }];
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void) showMenuOptions {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Menu Options!"
+                                          message:@"Choose an option."
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *historyAction = [UIAlertAction
+                                    actionWithTitle:@"History"
+                                    style:UIAlertActionStyleCancel
+                                    handler:^(UIAlertAction *action)
+                                    {
+                                        NSLog(@"History clicked");
+                                    }];
+    
+    UIAlertAction *logoutAction = [UIAlertAction
+                                   actionWithTitle:@"Logout"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"logout clicked");
+                                       NSError *signOutError;
+                                       BOOL status = [[FIRAuth auth] signOut:&signOutError];
+                                       if (!status) {
+                                           [self showAlertWithError:signOutError];
+                                       } else {
+                                           [self performSegueWithIdentifier:@"logout_success" sender:self];
+                                       }
+
+                                   }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                               actionWithTitle:@"Cancel"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"cancel clicked");
+                               }];
+    
+    [alertController addAction:historyAction];
+    [alertController addAction:cancelAction];
+    [alertController addAction:logoutAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 

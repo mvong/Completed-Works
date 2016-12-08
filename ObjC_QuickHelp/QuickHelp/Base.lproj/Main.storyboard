@@ -416,6 +416,9 @@
                                 <segue destination="ycX-hL-nIv" kind="presentation" id="9yA-7e-iJl"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="History" id="d5j-z8-PaE">
+                            <color key="tintColor" red="0.2470588235" green="0.53333333329999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="ygV-lg-RPP" id="D92-SQ-zDC"/>
@@ -468,7 +471,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Feed" id="LbG-zs-052">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="xNa-7l-1uy">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="xNa-7l-1uy">
                             <color key="tintColor" red="0.24758629660000001" green="0.53432801419999998" blue="0.70990215109999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="logoutClicked:" destination="OGe-pl-8sf" id="c4k-s0-uz4"/>
@@ -554,6 +557,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jsp-KV-VKd"/>
+        <segue reference="7oh-q0-40h"/>
     </inferredMetricsTieBreakers>
 </document>

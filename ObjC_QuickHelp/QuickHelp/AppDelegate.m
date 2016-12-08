@@ -7,10 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "PostsModel.h"
 @import Firebase;
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) FIRDatabaseReference* dbRef;
+@property (strong, nonatomic) PostsModel* postsModel;
 @end
 
 @implementation AppDelegate
@@ -19,6 +21,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+    self.postsModel = [PostsModel sharedPostsModel];
+    self.dbRef = [[[FIRDatabase database] reference] child:@"Service"];
+    [self.dbRef observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        Post* newPost = [[Post alloc] initWithPostDescription:snapshot.value[@"Description"]
+                                                      address:snapshot.value[@"Address"]
+                                                         city:snapshot.value[@"City"]
+                                                      zipcode:snapshot.value[@"Zipcode"]
+                                                         user:snapshot.value[@"User"]];
+        
+        [self.postsModel addPost:newPost];
+        
+    }];
     return YES;
 }
 

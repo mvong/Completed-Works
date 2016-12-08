@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PostsModel.h"
+#import "TableViewController.h"
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) PostsModel* postsModel;
