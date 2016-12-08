@@ -42,11 +42,10 @@
 // Helper function that sets up locationManager && identifies nearby services
 - (void) setUpLocationManager {
     CLGeocoder* geoCoder = [[CLGeocoder alloc] init];
-    for(int i = 0; i < [self.servicePostsModel getNumPosts]; i++) {
-        NSString* address = [self.servicePostsModel getPostAtIndex:i].address;
-        NSString* city = [self.servicePostsModel getPostAtIndex:i].city;
-        NSString* zipcode = [self.servicePostsModel getPostAtIndex:i].zipcode;
-        NSString* description = [self.servicePostsModel getPostAtIndex:i].postDescription;
+        NSString* address = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].address;
+        NSString* city = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].city;
+        NSString* zipcode = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].zipcode;
+        NSString* description = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].postDescription;
         NSString* fullAddress = [NSString stringWithFormat:@"%@, %@, %@", address, city, zipcode];
         [geoCoder geocodeAddressString:fullAddress completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
             if(error) {
@@ -57,7 +56,7 @@
                 CLLocation* spotLocation = [[CLLocation alloc] initWithLatitude:placemark.location.coordinate.latitude
                                                                      longitude:placemark.location.coordinate.longitude];
                 serviceMarker.coordinate = spotLocation.coordinate;
-                serviceMarker.title = @"Service!";
+                serviceMarker.title = @"Service Location Found!";
                 serviceMarker.subtitle = description;
                 [self.mapView addAnnotation:serviceMarker];
                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance
@@ -65,8 +64,6 @@
                 [self.mapView setRegion:region animated:YES];
             }
         }];
-        
-    }
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;

@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tablePostsModel = [PostsModel sharedPostsModel];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -51,7 +51,7 @@
 
 // Get post at index
 -(Post*) getPostAtIndex:(NSUInteger)index {
-    self.currentPost = index;
+    //self.currentPost = index;
     return [self.myPosts objectAtIndex:index];
 }
 
