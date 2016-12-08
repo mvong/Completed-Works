@@ -10,7 +10,9 @@
 @import Firebase;
 @interface TableViewController ()
 
-@property (strong, nonatomic) FIRDatabaseReference *databaseRef;
+@property (strong, nonatomic) FIRDatabaseReference *fdbRef;
+@property (strong, nonatomic) NSDictionary* dictionary;
+@property (strong, nonatomic) NSMutableArray* __block array;
 
 @end
 
@@ -18,14 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.databaseRef = [[FIRDatabase database] reference];
+    self.array = [[NSMutableArray alloc] init];
+    self.fdbRef = [[[FIRDatabase database] reference] child:@"Service"];
+    [[self.fdbRef queryOrderedByKey] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        [self.array addObject:snapshot.value];
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,13 +46,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-    return 5;
+    return [self.array count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [self.array objectAtIndex:indexPath.row][@"Description"];
+    cell.detailTextLabel.text = [self.array objectAtIndex:indexPath.row][@"User"];
     
     // Configure the cell...
     
@@ -88,9 +96,9 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
+#pragma mark - Navigation
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

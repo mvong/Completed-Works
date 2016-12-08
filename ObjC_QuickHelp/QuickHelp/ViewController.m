@@ -36,6 +36,7 @@
                                  [self showAlertWithError:error];
                              } else {
                                  [self performSegueWithIdentifier:@"login_success" sender:self];
+                        
                              }
     
                          }];
@@ -79,6 +80,10 @@
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 @end

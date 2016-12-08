@@ -26,7 +26,7 @@
 @synthesize zipcodeTextField;
 
 UITextField* activeField;
-
+UInt8 refHandle;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -153,8 +153,10 @@ UITextField* activeField;
     [self.addressTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.cityTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.zipcodeTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    
+    
+    
 }
-
 
 - (IBAction)addBackButtonClicked:(id)sender {
     if(self.AddService) {
@@ -185,11 +187,13 @@ UITextField* activeField;
                   self.addDescriptionTextView.text, @"Description",
                   self.addressTextField.text,@"Address",
                   self.cityTextField.text, @"City",
-                  self.zipcodeTextField.text, @"Zipcode", nil];
+                  self.zipcodeTextField.text, @"Zipcode",
+                  [[FIRAuth auth]currentUser].email, @"User", nil];
     FIRDatabaseReference* ref = [self.fdbRef childByAutoId];
     [ref setValue:dictionary];
     NSString* currUser = [[FIRAuth auth]currentUser].email;
     NSLog(@"%@ added something!", currUser);
+    
     self.addSegmentControl.selectedSegmentIndex = 0;
     self.addDescriptionTextView.text = nil;
     self.addressTextField.text = nil;
