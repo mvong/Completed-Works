@@ -133,12 +133,11 @@
                         <outlet property="passwordTextField" destination="gNv-1g-ofb" id="L2P-sR-47y"/>
                         <outlet property="usernameTextField" destination="hNf-hZ-aXy" id="HC4-Yh-uNT"/>
                         <segue destination="ycX-hL-nIv" kind="presentation" identifier="login_success" id="Jsp-KV-VKd"/>
-                        <segue destination="OGe-pl-8sf" kind="presentation" id="nzx-w7-3tX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="262"/>
+            <point key="canvasLocation" x="-220" y="366"/>
         </scene>
         <!--AddViewController-->
         <scene sceneID="Ao6-8o-IFD">
@@ -339,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnG-nQ-BtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3129" y="336"/>
+            <point key="canvasLocation" x="2916" y="1648"/>
         </scene>
         <!--ServiceViewController-->
         <scene sceneID="u4P-8l-mqu">
@@ -430,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7e-NW-ihd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="1029"/>
+            <point key="canvasLocation" x="1951" y="1648"/>
         </scene>
         <!--TableViewC-->
         <scene sceneID="4TI-6G-xhz">
@@ -442,7 +441,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="g0L-FD-ZhW" detailTextLabel="KIY-Te-kGB" style="IBUITableViewCellStyleSubtitle" id="iSy-87-iKu">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iSy-87-iKu" id="lbx-aP-Qbe">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -494,7 +493,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxh-y9-tS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="350"/>
+            <point key="canvasLocation" x="1951" y="366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0wM-U4-Adt">
@@ -512,7 +511,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTd-br-Wt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="350"/>
+            <point key="canvasLocation" x="951" y="366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cCx-My-ev1">
@@ -534,7 +533,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cB-9K-Ndm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="350"/>
+            <point key="canvasLocation" x="2916" y="366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lgs-d6-Rwh">
@@ -556,11 +555,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdk-YR-emb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="1029"/>
+            <point key="canvasLocation" x="951" y="1648"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nzx-w7-3tX"/>
-        <segue reference="7oh-q0-40h"/>
+        <segue reference="Jsp-KV-VKd"/>
     </inferredMetricsTieBreakers>
 </document>
