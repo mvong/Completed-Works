@@ -9,14 +9,15 @@
 #import "ServiceViewController.h"
 
 @interface ServiceViewController () <CLLocationManagerDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocation *startPoint;
 @property (assign, nonatomic) CLLocationDistance distanceFromStart;
 @property (strong, nonatomic) CLLocationManager* locationManager;
+
 @end
 
 @implementation ServiceViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Helper function that sets up locationManager
 - (void) setUpLocationManager {
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -38,7 +40,7 @@
     [self.locationManager startUpdatingLocation];
     self.mapView.showsUserLocation = YES;
 }
-
+// Sets up the map locator based on user's location
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
     CLLocation *newLocation = [locations lastObject];
@@ -59,13 +61,11 @@
         [newLocation distanceFromLocation:self.startPoint];
     }
 }
-
+// LocationManager failed...most likely because user denied permission
 -(void)locationManager:(CLLocationManager *)manager
       didFailWithError:(NSError *)error {
     NSLog(@"Error: %@", error);
 }
-
-
 
 
 
