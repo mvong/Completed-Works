@@ -37,6 +37,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+// Login button clicked (check for user authenticity)
 - (IBAction)loginClicked:(id)sender {
     [[FIRAuth auth] signInWithEmail:self.usernameTextField.text
                            password:self.passwordTextField.text
@@ -50,7 +52,7 @@
     
                          }];
 }
-
+// Create account button clicked
 - (IBAction)createClicked:(id)sender {
     [[FIRAuth auth] createUserWithEmail:self.usernameTextField.text
                                password:self.passwordTextField.text
