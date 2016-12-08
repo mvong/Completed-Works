@@ -23,9 +23,8 @@
 @synthesize addressTextField;
 @synthesize cityTextField;
 @synthesize zipcodeTextField;
-
 UITextField* activeField;
-UInt8 refHandle;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
@@ -111,10 +110,9 @@ UInt8 refHandle;
     return YES;
 }
 
-// Hide keyboard
+// Hide keyboard if user hits return key
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    textField.text = nil;
     return YES;
 }
 // Hide keyboard based on user touch

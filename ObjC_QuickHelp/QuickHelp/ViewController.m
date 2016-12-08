@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 @import Firebase;
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
@@ -91,8 +91,18 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+// Hide keyboard if user hits return key
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+// Hide keyboard based on user touch
+-(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch* touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [self.usernameTextField resignFirstResponder];
+        [self.passwordTextField resignFirstResponder];
+    }
 }
 
 @end
