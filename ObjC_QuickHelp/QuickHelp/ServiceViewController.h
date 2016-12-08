@@ -11,10 +11,15 @@
 #import <MapKit/MapKit.h>
 #import "XYZMarker.h"
 
+typedef void (^PostAdditionHandler)(NSMutableArray* posts);
+
 @interface ServiceViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UITextView *serviceTextView;
+@property (copy, nonatomic) PostAdditionHandler postHandler;
 
+
+-(void) updateLabel;
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostsModel.h"
 
 @interface ViewController : UIViewController
-
+@property (strong, nonatomic) PostsModel* postsModel;
 @end
 

@@ -431,10 +431,10 @@
             </objects>
             <point key="canvasLocation" x="1951" y="1648"/>
         </scene>
-        <!--TableViewC-->
+        <!--TableViewController-->
         <scene sceneID="4TI-6G-xhz">
             <objects>
-                <tableViewController title="TableViewC" id="OGe-pl-8sf" customClass="TableViewController" sceneMemberID="viewController">
+                <tableViewController title="TableViewController" id="OGe-pl-8sf" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VVJ-DO-WZr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,7 +464,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="OI9-AO-5A8" kind="presentation" id="Wsg-tF-IsM"/>
+                                    <segue destination="OI9-AO-5A8" kind="presentation" identifier="show_info" id="Wsg-tF-IsM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

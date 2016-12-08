@@ -21,8 +21,9 @@
 		4D0832CC1DF6255D00ACA71D /* XYZMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832CB1DF6255D00ACA71D /* XYZMarker.m */; };
 		4D0832E51DF689FA00ACA71D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832E41DF689FA00ACA71D /* TableViewController.m */; };
 		4D0832E91DF6951000ACA71D /* ServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832E81DF6951000ACA71D /* ServiceViewController.m */; };
-		4D0832F11DF6CA7F00ACA71D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832F01DF6CA7F00ACA71D /* User.m */; };
 		4D0832F31DF76E8200ACA71D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D0832F21DF76E8200ACA71D /* GoogleService-Info.plist */; };
+		4D3EF7451DF9512800829992 /* PostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF7441DF9512800829992 /* PostsModel.m */; };
+		4D3EF7481DF9515F00829992 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF7471DF9515F00829992 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +70,11 @@
 		4D0832E41DF689FA00ACA71D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4D0832E71DF6951000ACA71D /* ServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceViewController.h; sourceTree = "<group>"; };
 		4D0832E81DF6951000ACA71D /* ServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceViewController.m; sourceTree = "<group>"; };
-		4D0832EF1DF6CA7F00ACA71D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		4D0832F01DF6CA7F00ACA71D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4D0832F21DF76E8200ACA71D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "QuickHelp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D3EF7431DF9512800829992 /* PostsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsModel.h; sourceTree = "<group>"; };
+		4D3EF7441DF9512800829992 /* PostsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsModel.m; sourceTree = "<group>"; };
+		4D3EF7461DF9515F00829992 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		4D3EF7471DF9515F00829992 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		91A3F8AE8A6B9B85B5968FC6 /* Pods-QuickHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickHelp/Pods-QuickHelp.release.xcconfig"; sourceTree = "<group>"; };
 		AA6E9C8F3EF9CEF0275F5899 /* libPods-QuickHelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuickHelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,7 +133,7 @@
 		4D0832821DF5626E00ACA71D /* QuickHelp */ = {
 			isa = PBXGroup;
 			children = (
-				4D0832EB1DF6B8CA00ACA71D /* UserModel */,
+				4D3EF7421DF9510E00829992 /* PostsModel */,
 				4D0832EA1DF6B8A500ACA71D /* AppDelegate */,
 				4D0832D01DF656D400ACA71D /* XYZMarker */,
 				4D0832E61DF694FB00ACA71D /* ServiceViewController */,
@@ -226,13 +229,15 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		4D0832EB1DF6B8CA00ACA71D /* UserModel */ = {
+		4D3EF7421DF9510E00829992 /* PostsModel */ = {
 			isa = PBXGroup;
 			children = (
-				4D0832EF1DF6CA7F00ACA71D /* User.h */,
-				4D0832F01DF6CA7F00ACA71D /* User.m */,
+				4D3EF7431DF9512800829992 /* PostsModel.h */,
+				4D3EF7441DF9512800829992 /* PostsModel.m */,
+				4D3EF7461DF9515F00829992 /* Post.h */,
+				4D3EF7471DF9515F00829992 /* Post.m */,
 			);
-			name = UserModel;
+			name = PostsModel;
 			sourceTree = "<group>";
 		};
 		717A586358324AB821FB60CA /* Frameworks */ = {
@@ -435,10 +440,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0832F11DF6CA7F00ACA71D /* User.m in Sources */,
+				4D3EF7451DF9512800829992 /* PostsModel.m in Sources */,
 				4D0832BE1DF5F93000ACA71D /* AddViewController.m in Sources */,
 				4D0832E91DF6951000ACA71D /* ServiceViewController.m in Sources */,
 				4D08328B1DF5626E00ACA71D /* ViewController.m in Sources */,
+				4D3EF7481DF9515F00829992 /* Post.m in Sources */,
 				4D0832CC1DF6255D00ACA71D /* XYZMarker.m in Sources */,
 				4D0832881DF5626E00ACA71D /* AppDelegate.m in Sources */,
 				4D0832E51DF689FA00ACA71D /* TableViewController.m in Sources */,

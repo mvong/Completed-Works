@@ -9,11 +9,10 @@
 #import "ViewController.h"
 @import Firebase;
 @interface ViewController ()
-
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
-
+@property (strong, nonatomic) FIRDatabaseReference* dbRef;
 @end
 
 @implementation ViewController
@@ -21,6 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.postsModel = [PostsModel sharedPostsModel];
+    self.dbRef = [[[FIRDatabase database] reference] child:@"Service"];
+    [self.dbRef observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        Post* newPost = [[Post alloc] initWithPostDescription:snapshot.value[@"Description"]
+                                                      address:snapshot.value[@"Address"]
+                                                         city:snapshot.value[@"City"]
+                                                      zipcode:snapshot.value[@"Zipcode"]
+                                                         user:snapshot.value[@"User"]];
+        
+        [self.postsModel addPost:newPost];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +46,6 @@
                                  [self showAlertWithError:error];
                              } else {
                                  [self performSegueWithIdentifier:@"login_success" sender:self];
-                        
                              }
     
                          }];
