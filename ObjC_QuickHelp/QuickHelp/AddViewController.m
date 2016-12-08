@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) FIRDatabaseReference *fdbRef;
-@property (strong, nonatomic) PostsModel* addPostsModel;
 @end
 
 @implementation AddViewController
@@ -29,7 +28,6 @@ UITextField* activeField;
 UInt8 refHandle;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.addPostsModel = [PostsModel sharedPostsModel]; //Get singleton
     [self registerForKeyboardNotifications];
     
     self.fdbRef =[[FIRDatabase database] reference]; // Get reference to firebase database
@@ -184,9 +182,6 @@ UInt8 refHandle;
     [ref setValue:dictionary];
     NSString* currUser = [[FIRAuth auth]currentUser].email;
     NSLog(@"%@ added something!", currUser);
-    
-    Post* newPost = [[Post alloc] initWithPostDescription:self.addDescriptionTextView.text address:self.addressTextField.text city:self.cityTextField.text zipcode:self.zipcodeTextField.text user: [[FIRAuth auth]currentUser].email];
-    [self.addPostsModel addPost:newPost];
     
     self.addSegmentControl.selectedSegmentIndex = 0;
     self.addDescriptionTextView.text = nil;

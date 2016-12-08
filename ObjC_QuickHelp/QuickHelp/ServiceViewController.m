@@ -41,6 +41,18 @@
 
 // Helper function that sets up locationManager
 - (void) setUpLocationManager {
+    
+    CLGeocoder* geoCoder = [[CLGeocoder alloc] init];
+    for(int i = 0; i < [self.servicePostsModel getNumPosts]; i++) {
+        NSString* address = [self.servicePostsModel getPostAtIndex:i].address;
+        NSString* city = [self.servicePostsModel getPostAtIndex:i].city;
+        NSString* zipcode = [self.servicePostsModel getPostAtIndex:i].zipcode;
+        NSString* fullAddress = [NSString stringWithFormat:@"%@, %@, %@", address, city, zipcode];
+        NSLog(@"Address %d: %@", i, fullAddress);
+    }
+    
+//    [geoCoder geocodeAddressString:<#(nonnull NSString *)#> completionHandler:<#^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error)completionHandler#>]
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -56,6 +68,7 @@
     if (self.startPoint == nil) {
         self.startPoint = newLocation;
         self.distanceFromStart = 0;
+        
         XYZMarker *start = [[XYZMarker alloc] init];
         start.coordinate = newLocation.coordinate;
         start.title = @"Start Point";
