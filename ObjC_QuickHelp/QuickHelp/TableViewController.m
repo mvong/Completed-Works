@@ -49,6 +49,14 @@
 // Get selected service row
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.tablePostsModel.currentPost = indexPath.row;
+    HistoryPostsModel* historyPostsModel = [HistoryPostsModel sharedHistoryPostsModel];
+    NSString* postDesc = [self.tablePostsModel getPostAtIndex:indexPath.row].postDescription;
+    NSString* addressStr = [self.tablePostsModel getPostAtIndex:indexPath.row].address;
+    NSString* cityStr = [self.tablePostsModel getPostAtIndex:indexPath.row].city;
+    NSString* zipcodeStr = [self.tablePostsModel getPostAtIndex:indexPath.row].zipcode;
+    NSString* userStr = [self.tablePostsModel getPostAtIndex:indexPath.row].user;
+    NSDictionary* newPost = [[NSDictionary alloc] initWithObjectsAndKeys:postDesc, @"Description", addressStr, @"Address", cityStr, @"City", zipcodeStr, @"Zipcode", userStr, @"User", nil];
+    [historyPostsModel addPost:newPost];
     [self performSegueWithIdentifier:@"show_info" sender:self];
 }
 
@@ -81,7 +89,7 @@
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
+// Show menu of options
 -(void) showMenuOptions {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Menu Options!"
@@ -94,6 +102,7 @@
                                     handler:^(UIAlertAction *action)
                                     {
                                         NSLog(@"History clicked");
+                                        [self performSegueWithIdentifier:@"history_clicked" sender:self];
                                     }];
     
     UIAlertAction *logoutAction = [UIAlertAction

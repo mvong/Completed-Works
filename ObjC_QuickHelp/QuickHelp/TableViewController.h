@@ -10,6 +10,7 @@
 #import "ServiceViewController.h"
 #import "ViewController.h"
 #import "TableNavigationController.h"
+#import "HistoryPostsModel.h"
 
 @interface TableViewController : UITableViewController
 

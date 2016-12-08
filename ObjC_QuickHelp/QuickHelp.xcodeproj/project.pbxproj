@@ -22,6 +22,8 @@
 		4D0832E51DF689FA00ACA71D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832E41DF689FA00ACA71D /* TableViewController.m */; };
 		4D0832E91DF6951000ACA71D /* ServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0832E81DF6951000ACA71D /* ServiceViewController.m */; };
 		4D0832F31DF76E8200ACA71D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D0832F21DF76E8200ACA71D /* GoogleService-Info.plist */; };
+		4D1EC5231DFA1E6600D3CEB0 /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EC5221DFA1E6600D3CEB0 /* HistoryTableViewController.m */; };
+		4D1EC5261DFA22C400D3CEB0 /* HistoryPostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EC5251DFA22C400D3CEB0 /* HistoryPostsModel.m */; };
 		4D3EF7451DF9512800829992 /* PostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF7441DF9512800829992 /* PostsModel.m */; };
 		4D3EF7481DF9515F00829992 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF7471DF9515F00829992 /* Post.m */; };
 		4D3EF74C1DF9612700829992 /* TableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EF74B1DF9612700829992 /* TableNavigationController.m */; };
@@ -74,6 +76,10 @@
 		4D0832E71DF6951000ACA71D /* ServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceViewController.h; sourceTree = "<group>"; };
 		4D0832E81DF6951000ACA71D /* ServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceViewController.m; sourceTree = "<group>"; };
 		4D0832F21DF76E8200ACA71D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "QuickHelp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D1EC5211DFA1E6600D3CEB0 /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		4D1EC5221DFA1E6600D3CEB0 /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		4D1EC5241DFA22C400D3CEB0 /* HistoryPostsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPostsModel.h; sourceTree = "<group>"; };
+		4D1EC5251DFA22C400D3CEB0 /* HistoryPostsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPostsModel.m; sourceTree = "<group>"; };
 		4D3EF7431DF9512800829992 /* PostsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsModel.h; sourceTree = "<group>"; };
 		4D3EF7441DF9512800829992 /* PostsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsModel.m; sourceTree = "<group>"; };
 		4D3EF7461DF9515F00829992 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 			children = (
 				4D0832E31DF689FA00ACA71D /* TableViewController.h */,
 				4D0832E41DF689FA00ACA71D /* TableViewController.m */,
+				4D1EC5211DFA1E6600D3CEB0 /* HistoryTableViewController.h */,
+				4D1EC5221DFA1E6600D3CEB0 /* HistoryTableViewController.m */,
 			);
 			name = TableViewController;
 			sourceTree = "<group>";
@@ -246,6 +254,8 @@
 				4D3EF7441DF9512800829992 /* PostsModel.m */,
 				4D3EF7461DF9515F00829992 /* Post.h */,
 				4D3EF7471DF9515F00829992 /* Post.m */,
+				4D1EC5241DFA22C400D3CEB0 /* HistoryPostsModel.h */,
+				4D1EC5251DFA22C400D3CEB0 /* HistoryPostsModel.m */,
 			);
 			name = PostsModel;
 			sourceTree = "<group>";
@@ -463,11 +473,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1EC5231DFA1E6600D3CEB0 /* HistoryTableViewController.m in Sources */,
 				4D3EF7451DF9512800829992 /* PostsModel.m in Sources */,
 				4D3EF7521DF9615E00829992 /* AddNavigationController.m in Sources */,
 				4D0832BE1DF5F93000ACA71D /* AddViewController.m in Sources */,
 				4D3EF74C1DF9612700829992 /* TableNavigationController.m in Sources */,
 				4D0832E91DF6951000ACA71D /* ServiceViewController.m in Sources */,
+				4D1EC5261DFA22C400D3CEB0 /* HistoryPostsModel.m in Sources */,
 				4D08328B1DF5626E00ACA71D /* ViewController.m in Sources */,
 				4D3EF7481DF9515F00829992 /* Post.m in Sources */,
 				4D0832CC1DF6255D00ACA71D /* XYZMarker.m in Sources */,

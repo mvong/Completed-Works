@@ -1,31 +1,27 @@
 //
-//  PostsModel.m
+//  HistoryPostsModel.m
 //  QuickHelp
 //
 //  Created by Mark on 12/8/16.
 //  Copyright © 2016 Mark Vong. All rights reserved.
 //
 
-#import "PostsModel.h"
-
-
-@interface PostsModel()
+#import "HistoryPostsModel.h"
+@interface HistoryPostsModel()
 
 @property(readwrite, nonatomic) NSMutableArray* myPosts;
-@property(readwrite, nonatomic) NSDictionary* thisPost;
 
 @end
+@implementation HistoryPostsModel
 
-@implementation PostsModel
-
-// General Singleton
-+(instancetype) sharedPostsModel {
-    static PostsModel* _sharedModel = nil;
+//General History Singleton
++(instancetype) sharedHistoryPostsModel {
+    static HistoryPostsModel* _sharedHistoryModel = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedModel = [[self alloc] init];
+        _sharedHistoryModel = [[self alloc] init];
     });
-    return _sharedModel;
+    return _sharedHistoryModel;
 }
 
 // Initialize array of posts
@@ -33,10 +29,14 @@
 {
     self = [super init];
     if (self) {
-        self.currentPost = 0;
         self.myPosts = [[NSMutableArray alloc] init];
     }
     return self;
+}
+
+// Add a post
+-(void) addPost:(NSDictionary*) post {
+    [self.myPosts addObject:post];
 }
 
 // Get number of posts
@@ -44,15 +44,8 @@
     return [self.myPosts count];
 }
 
-// Add a post
--(void) addPost:(Post*) post {
-    [self.myPosts addObject:post];
-}
-
 // Get post at index
--(Post*) getPostAtIndex:(NSUInteger)index {
-    //self.currentPost = index;
+-(NSDictionary*) getPostAtIndex:(NSUInteger) index {
     return [self.myPosts objectAtIndex:index];
 }
-
 @end
