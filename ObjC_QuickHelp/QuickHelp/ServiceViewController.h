@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostsModel.h"
+#import "ServiceNavigationController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "XYZMarker.h"
@@ -20,6 +22,4 @@ typedef void (^PostAdditionHandler)(NSMutableArray* posts);
 @property (weak, nonatomic) IBOutlet UITextView *serviceTextView;
 @property (copy, nonatomic) PostAdditionHandler postHandler;
 
-
--(void) updateLabel;
 @end

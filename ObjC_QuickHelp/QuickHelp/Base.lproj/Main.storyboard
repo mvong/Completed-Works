@@ -358,8 +358,9 @@
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tUi-Rd-GQ2">
                                         <rect key="frame" x="20" y="14" width="560" height="279"/>
                                     </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-lg-RPP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-lg-RPP">
                                         <rect key="frame" x="20" y="301" width="560" height="37"/>
+                                        <color key="backgroundColor" red="0.019505033559999999" green="0.67488989089999996" blue="0.90058724830000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="PPQ-9V-5gK"/>
                                         </constraints>
@@ -367,8 +368,9 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-fK-Z0h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-fK-Z0h">
                                         <rect key="frame" x="20" y="346" width="560" height="40"/>
+                                        <color key="backgroundColor" red="0.019505033559999999" green="0.67488989089999996" blue="0.90058724830000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="O8A-hX-3sB"/>
                                         </constraints>
@@ -463,9 +465,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="OI9-AO-5A8" kind="presentation" identifier="show_info" id="Wsg-tF-IsM"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -489,16 +488,17 @@
                     </navigationItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout_success" id="q6i-Xl-95r"/>
+                        <segue destination="OI9-AO-5A8" kind="presentation" identifier="show_info" id="oW0-cv-pWs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxh-y9-tS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951" y="366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Table Navigation Controller-->
         <scene sceneID="0wM-U4-Adt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ycX-hL-nIv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ycX-hL-nIv" customClass="TableNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mgT-FX-OcM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -513,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="951" y="366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Navigation Controller-->
         <scene sceneID="cCx-My-ev1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqH-ri-Qat" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqH-ri-Qat" customClass="AddNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ofg-ug-wb0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -535,10 +535,10 @@
             </objects>
             <point key="canvasLocation" x="2916" y="366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Service Navigation Controller-->
         <scene sceneID="lgs-d6-Rwh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OI9-AO-5A8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OI9-AO-5A8" customClass="ServiceNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VFB-Hn-yo8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -559,6 +559,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jsp-KV-VKd"/>
+        <segue reference="9yA-7e-iJl"/>
     </inferredMetricsTieBreakers>
 </document>

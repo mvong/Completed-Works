@@ -13,7 +13,6 @@
 
 @property(readwrite, nonatomic) NSMutableArray* myPosts;
 @property(readwrite, nonatomic) NSDictionary* thisPost;
-@property(readwrite, nonatomic) NSUInteger currentPost;
 
 @end
 
@@ -34,6 +33,7 @@
 {
     self = [super init];
     if (self) {
+        self.currentPost = 0;
         self.myPosts = [[NSMutableArray alloc] init];
     }
     return self;

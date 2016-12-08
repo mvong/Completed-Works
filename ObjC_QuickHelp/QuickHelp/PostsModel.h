@@ -13,7 +13,7 @@
 
 @property(readonly, nonatomic) NSMutableArray* myPosts;
 @property(readonly, nonatomic) NSDictionary* thisPost;
-@property(readonly, nonatomic) NSUInteger currentPost;
+@property(readwrite, nonatomic) NSUInteger currentPost;
 
 // Creating posts model
 +(instancetype) sharedPostsModel;

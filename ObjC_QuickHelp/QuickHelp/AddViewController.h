@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AddNavigationController.h"
+#import "PostsModel.h"
 @interface AddViewController : UIViewController
 typedef void (^AddServiceCompletionHandler)(NSUInteger segment,
                                             NSString* description,

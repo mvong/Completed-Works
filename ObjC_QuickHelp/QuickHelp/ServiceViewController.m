@@ -14,6 +14,7 @@
 @property (strong, nonatomic) CLLocation *startPoint;
 @property (assign, nonatomic) CLLocationDistance distanceFromStart;
 @property (strong, nonatomic) CLLocationManager* locationManager;
+@property (strong, nonatomic) PostsModel* servicePostsModel;
 
 @end
 
@@ -22,7 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.servicePostsModel = [PostsModel sharedPostsModel];
     [self setUpLocationManager];
+    [self setUpInterface];
+}
+
+- (void) setUpInterface {
+    self.authorLabel.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].user;
+    self.locationLabel.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].address;
+    self.serviceTextView.text = [self.servicePostsModel getPostAtIndex:self.servicePostsModel.currentPost].postDescription;
 }
 
 - (void)didReceiveMemoryWarning {

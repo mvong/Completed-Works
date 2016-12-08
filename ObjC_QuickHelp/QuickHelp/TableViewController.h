@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ServiceViewController.h"
 #import "ViewController.h"
+#import "TableNavigationController.h"
 
 @interface TableViewController : UITableViewController
 

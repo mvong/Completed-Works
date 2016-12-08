@@ -25,17 +25,17 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
-
+// Number of sections
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+// Set number of cells
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.tablePostsModel getNumPosts];
 }
 
-
+// Initialize cells
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
@@ -45,21 +45,12 @@
     return cell;
 }
 
-
+// Get selected service row
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"show_info" sender:tableView];
+    self.tablePostsModel.currentPost = indexPath.row;
+    [self performSegueWithIdentifier:@"show_info" sender:self];
 }
 
-#pragma mark - Navigation
-
-// Prepare to segue for more info
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"show_info"]) {
-        UINavigationController* nc = (UINavigationController*)segue.destinationViewController;
-        ServiceViewController* svc = [[nc viewControllers] lastObject];
-        svc.authorLabel.text = @"Please";
-    }
-}
 
 // Log out if user clicks logout button
 - (IBAction)logoutClicked:(id)sender {
