@@ -10,8 +10,10 @@
 @interface HistoryPostsModel()
 
 @property(readwrite, nonatomic) NSMutableArray* myPosts;
+@property(strong, nonatomic) NSString* filePath;
 
 @end
+
 @implementation HistoryPostsModel
 
 //General History Singleton
@@ -25,11 +27,23 @@
 }
 
 // Initialize array of posts
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.myPosts = [[NSMutableArray alloc] init];
+        // Save plist to Documents folder
+        NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString* documentsDirectory = [paths objectAtIndex:0];
+        self.filePath = [documentsDirectory stringByAppendingString:@"historyPosts.plist"];
+        NSMutableArray* readHistoryPosts = [NSMutableArray arrayWithContentsOfFile:self.filePath];
+        if(!readHistoryPosts) {
+           self.myPosts = [[NSMutableArray alloc] init];
+        } else {
+            self.myPosts = [[NSMutableArray alloc] init];
+            NSDictionary* tempPost;
+            for(tempPost in readHistoryPosts) {
+                [self.myPosts addObject:tempPost];
+            }
+        }
     }
     return self;
 }
@@ -37,6 +51,7 @@
 // Add a post
 -(void) addPost:(NSDictionary*) post {
     [self.myPosts addObject:post];
+    [self save];
 }
 
 // Get number of posts
@@ -47,5 +62,14 @@
 // Get post at index
 -(NSDictionary*) getPostAtIndex:(NSUInteger) index {
     return [self.myPosts objectAtIndex:index];
+}
+
+// Save array to file
+-(void) save {
+    NSMutableArray* myHistoryPosts = [[NSMutableArray alloc] init];
+    for(NSDictionary* post in self.myPosts) {
+        [myHistoryPosts addObject:post];
+    }
+    [myHistoryPosts writeToFile:self.filePath atomically:YES];
 }
 @end

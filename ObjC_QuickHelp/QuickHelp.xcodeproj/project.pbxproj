@@ -148,13 +148,15 @@
 		4D0832821DF5626E00ACA71D /* QuickHelp */ = {
 			isa = PBXGroup;
 			children = (
+				4D1EC5281DFA268B00D3CEB0 /* HistoryPostsModel */,
+				4D1EC5271DFA268000D3CEB0 /* Post */,
 				4D3EF7421DF9510E00829992 /* PostsModel */,
 				4D0832EA1DF6B8A500ACA71D /* AppDelegate */,
 				4D0832D01DF656D400ACA71D /* XYZMarker */,
-				4D3EF7491DF9610600829992 /* NavigationController */,
+				4D3EF7491DF9610600829992 /* NavigationControllers */,
 				4D0832E61DF694FB00ACA71D /* ServiceViewController */,
 				4D0832BB1DF5F91C00ACA71D /* AddViewController */,
-				4D0832B71DF5731500ACA71D /* TableViewController */,
+				4D0832B71DF5731500ACA71D /* TableViewControllers */,
 				4D0832B61DF5730100ACA71D /* LoginViewController */,
 				4D0832831DF5626E00ACA71D /* Supporting Files */,
 			);
@@ -200,7 +202,7 @@
 			name = LoginViewController;
 			sourceTree = "<group>";
 		};
-		4D0832B71DF5731500ACA71D /* TableViewController */ = {
+		4D0832B71DF5731500ACA71D /* TableViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				4D0832E31DF689FA00ACA71D /* TableViewController.h */,
@@ -208,7 +210,7 @@
 				4D1EC5211DFA1E6600D3CEB0 /* HistoryTableViewController.h */,
 				4D1EC5221DFA1E6600D3CEB0 /* HistoryTableViewController.m */,
 			);
-			name = TableViewController;
+			name = TableViewControllers;
 			sourceTree = "<group>";
 		};
 		4D0832BB1DF5F91C00ACA71D /* AddViewController */ = {
@@ -247,20 +249,34 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
+		4D1EC5271DFA268000D3CEB0 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4D3EF7461DF9515F00829992 /* Post.h */,
+				4D3EF7471DF9515F00829992 /* Post.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		4D1EC5281DFA268B00D3CEB0 /* HistoryPostsModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D1EC5241DFA22C400D3CEB0 /* HistoryPostsModel.h */,
+				4D1EC5251DFA22C400D3CEB0 /* HistoryPostsModel.m */,
+			);
+			name = HistoryPostsModel;
+			sourceTree = "<group>";
+		};
 		4D3EF7421DF9510E00829992 /* PostsModel */ = {
 			isa = PBXGroup;
 			children = (
 				4D3EF7431DF9512800829992 /* PostsModel.h */,
 				4D3EF7441DF9512800829992 /* PostsModel.m */,
-				4D3EF7461DF9515F00829992 /* Post.h */,
-				4D3EF7471DF9515F00829992 /* Post.m */,
-				4D1EC5241DFA22C400D3CEB0 /* HistoryPostsModel.h */,
-				4D1EC5251DFA22C400D3CEB0 /* HistoryPostsModel.m */,
 			);
 			name = PostsModel;
 			sourceTree = "<group>";
 		};
-		4D3EF7491DF9610600829992 /* NavigationController */ = {
+		4D3EF7491DF9610600829992 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
 				4D3EF74A1DF9612700829992 /* TableNavigationController.h */,
@@ -270,7 +286,7 @@
 				4D3EF7501DF9615E00829992 /* AddNavigationController.h */,
 				4D3EF7511DF9615E00829992 /* AddNavigationController.m */,
 			);
-			name = NavigationController;
+			name = NavigationControllers;
 			sourceTree = "<group>";
 		};
 		717A586358324AB821FB60CA /* Frameworks */ = {
