@@ -35,7 +35,7 @@
         NSString* documentsDirectory = [paths objectAtIndex:0];
         self.filePath = [documentsDirectory stringByAppendingString:@"historyPosts.plist"];
         NSMutableArray* readHistoryPosts = [NSMutableArray arrayWithContentsOfFile:self.filePath];
-        if(!readHistoryPosts) {
+        if([readHistoryPosts count] == 0) {
            self.myPosts = [[NSMutableArray alloc] init];
         } else {
             self.myPosts = [[NSMutableArray alloc] init];

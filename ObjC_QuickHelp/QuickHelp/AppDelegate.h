@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostsModel.h"
+#import "HistoryPostsModel.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

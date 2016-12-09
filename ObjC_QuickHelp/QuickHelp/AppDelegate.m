@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "PostsModel.h"
 @import Firebase;
 
 @interface AppDelegate ()
 @property (strong, nonatomic) FIRDatabaseReference* dbRef;
 @property (strong, nonatomic) PostsModel* postsModel;
+@property (strong, nonatomic) HistoryPostsModel* historyPostsModel;
 @end
 
 @implementation AppDelegate
@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+    self.historyPostsModel = [HistoryPostsModel sharedHistoryPostsModel];
     self.postsModel = [PostsModel sharedPostsModel];
     self.dbRef = [[[FIRDatabase database] reference] child:@"Service"];
     [self.dbRef observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
