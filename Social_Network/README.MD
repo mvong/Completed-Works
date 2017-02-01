@@ -1,0 +1,1 @@
+An assignment simulating the functions of a social network created by Professor Mark Redekopp of USC. The program includes capabilities of adding, deleting, printing a user's friendlist. The user may also output the friendlist to a textfile.
