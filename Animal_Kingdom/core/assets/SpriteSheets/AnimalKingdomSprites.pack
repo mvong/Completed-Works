@@ -1,0 +1,599 @@
+
+AnimalKingdomSprites.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+adventure girl/Dead (1)_girl
+  rotate: false
+  xy: 1, 1213
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (2)_girl
+  rotate: false
+  xy: 1, 607
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (3)_girl
+  rotate: false
+  xy: 608, 1213
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (4)_girl
+  rotate: false
+  xy: 1, 1
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (5)_girl
+  rotate: false
+  xy: 608, 607
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (6)_girl
+  rotate: false
+  xy: 1215, 1213
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Dead (7)__girl
+  rotate: false
+  xy: 608, 1
+  size: 605, 604
+  orig: 605, 604
+  offset: 0, 0
+  index: -1
+adventure girl/Idle (1)_girl
+  rotate: false
+  xy: 1822, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (1)_girl
+  rotate: false
+  xy: 2465, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (10)_girl
+  rotate: false
+  xy: 3108, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (2)_girl
+  rotate: false
+  xy: 3751, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (3)_girl
+  rotate: false
+  xy: 4394, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (4)_girl
+  rotate: false
+  xy: 5037, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (5)_girl
+  rotate: false
+  xy: 5680, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (6)_girl
+  rotate: false
+  xy: 6323, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (7)_girl
+  rotate: false
+  xy: 6966, 1275
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (8)_girl
+  rotate: false
+  xy: 1215, 669
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Jump (9)_girl
+  rotate: false
+  xy: 1215, 125
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (1)_girl
+  rotate: false
+  xy: 1858, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (2)_girl
+  rotate: false
+  xy: 1858, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (3)_girl
+  rotate: false
+  xy: 2501, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (4)_girl
+  rotate: false
+  xy: 2501, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (5)_girl
+  rotate: false
+  xy: 3144, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (6)_girl
+  rotate: false
+  xy: 3144, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Melee (7)_girl
+  rotate: false
+  xy: 3787, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (1)_girl
+  rotate: false
+  xy: 3787, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (3)_girl
+  rotate: false
+  xy: 4430, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (4)_girl
+  rotate: false
+  xy: 4430, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (5)_girl
+  rotate: false
+  xy: 5073, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (6)_girl
+  rotate: false
+  xy: 5073, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (7)_girl
+  rotate: false
+  xy: 5716, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Run (8)_girl
+  rotate: false
+  xy: 5716, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Shoot (1)_girl
+  rotate: false
+  xy: 6359, 731
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+adventure girl/Shoot (3)_girl
+  rotate: false
+  xy: 6359, 187
+  size: 641, 542
+  orig: 641, 542
+  offset: 0, 0
+  index: -1
+
+AnimalKingdomSprites2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Adventure girl packed/AdventureGirl
+  rotate: false
+  xy: 1, 1
+  size: 8192, 2048
+  orig: 8192, 2048
+  offset: 0, 0
+  index: -1
+
+AnimalKingdomSprites3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+AdventureGirl
+  rotate: false
+  xy: 1, 4893
+  size: 8192, 2048
+  orig: 8192, 2048
+  offset: 0, 0
+  index: -1
+Robot
+  rotate: false
+  xy: 1, 2843
+  size: 8192, 2048
+  orig: 8192, 2048
+  offset: 0, 0
+  index: -1
+cyborggorillasprite
+  rotate: false
+  xy: 1, 2051
+  size: 8192, 790
+  orig: 8192, 790
+  offset: 0, 0
+  index: -1
+boss_sprite_preview
+  rotate: false
+  xy: 8195, 5839
+  size: 4096, 1102
+  orig: 4096, 1102
+  offset: 0, 0
+  index: -1
+octopusEnemy
+  rotate: false
+  xy: 1, 1
+  size: 642, 2048
+  orig: 642, 2048
+  offset: 0, 0
+  index: -1
+
+AnimalKingdomSprites4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Robot/Idle (1)_robot
+  rotate: false
+  xy: 1, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (10)_robot
+  rotate: false
+  xy: 1, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (2)_robot
+  rotate: false
+  xy: 570, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (4)_robot
+  rotate: false
+  xy: 1, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (5)_robot
+  rotate: false
+  xy: 570, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (6)_robot
+  rotate: false
+  xy: 1139, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (7)_robot
+  rotate: false
+  xy: 570, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (8)_robot
+  rotate: false
+  xy: 1139, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Jump (9)_robot
+  rotate: false
+  xy: 1708, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Melee (1)_robot
+  rotate: false
+  xy: 1139, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Melee (3)_robot
+  rotate: false
+  xy: 1708, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Melee (4)_robot
+  rotate: false
+  xy: 2277, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Melee (5)_robot
+  rotate: false
+  xy: 1708, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (1)_robot
+  rotate: false
+  xy: 2277, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (2)_robot
+  rotate: false
+  xy: 2846, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (3)_robot
+  rotate: false
+  xy: 2277, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (4)_robot
+  rotate: false
+  xy: 2846, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (5)_robot
+  rotate: false
+  xy: 3415, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (6)_robot
+  rotate: false
+  xy: 2846, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (7)_robot
+  rotate: false
+  xy: 3415, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Run (8)_robot
+  rotate: false
+  xy: 3984, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (1)_robot
+  rotate: false
+  xy: 3415, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (2)_robot
+  rotate: false
+  xy: 3984, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (3)_robot
+  rotate: false
+  xy: 4553, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (4)_robot
+  rotate: false
+  xy: 3984, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (5)_robot
+  rotate: false
+  xy: 4553, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (6)_robot
+  rotate: false
+  xy: 5122, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (7)_robot
+  rotate: false
+  xy: 4553, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (8)_robot
+  rotate: false
+  xy: 5122, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/RunShoot (9)_robot
+  rotate: false
+  xy: 5691, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Shoot (1)_robot
+  rotate: false
+  xy: 5122, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Shoot (2)_robot
+  rotate: false
+  xy: 5691, 559
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Shoot (3)_robot
+  rotate: false
+  xy: 6260, 1117
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Shoot (4)_robot
+  rotate: false
+  xy: 5691, 1
+  size: 567, 556
+  orig: 567, 556
+  offset: 0, 0
+  index: -1
+Robot/Dead (1)_robot
+  rotate: false
+  xy: 6260, 596
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (2)_robot
+  rotate: false
+  xy: 6829, 1154
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (3)_robot
+  rotate: false
+  xy: 6260, 75
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (4)_robot
+  rotate: false
+  xy: 7393, 1154
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (5)_robot
+  rotate: false
+  xy: 6829, 633
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (6)_robot
+  rotate: false
+  xy: 7393, 633
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+Robot/Dead (7)_robot
+  rotate: false
+  xy: 6824, 112
+  size: 562, 519
+  orig: 562, 519
+  offset: 0, 0
+  index: -1
+
+AnimalKingdomSprites5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Robot packed/Robot
+  rotate: false
+  xy: 1, 1
+  size: 8192, 2048
+  orig: 8192, 2048
+  offset: 0, 0
+  index: -1
