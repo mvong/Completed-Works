@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#117db0">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/feedImageView"
+
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:id="@+id/requestTextView"
+            android:text="Mark requested..."
+            android:textSize="16sp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/feedImageView"
+            android:textColor="@android:color/white"
+            android:textAlignment="textStart"
+            android:maxLines="3"
+            android:scrollbars="vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/timeTextView"
+            android:text="3:59 P.M."
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:textColor="@android:color/white"/>
+
+
+    </RelativeLayout>
+</LinearLayout>
