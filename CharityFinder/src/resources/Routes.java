@@ -34,8 +34,8 @@ public class Routes {
 	
 	// Charity Navigator 
 	public static final String rootAPIUrl = "https://api.data.charitynavigator.org/v2/Organizations?";
-	public static final String apiKey = "a8fb7b2da9e849c6f3c4d2391d2bdeae";
-	public static final String apiID = "4387ec81";
+	public static final String apiKey = "123d72a4356822be3c50c16058394fe7";
+	public static final String apiID = "1f022b7d";
 	public static final String baseAPIUrl = rootAPIUrl + "app_id=" + apiID + "&app_key=" + apiKey;
 	public static final String defaultStateUrl = baseAPIUrl + "&state=CA";
 	
